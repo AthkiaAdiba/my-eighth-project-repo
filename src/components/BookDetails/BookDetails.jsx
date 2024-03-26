@@ -1,5 +1,7 @@
 
 import { NavLink, useLoaderData, useParams } from "react-router-dom";
+import { saveBooks } from "../Utility/localStorage";
+import { wishSaveBooks } from "../Utility/wishLocalStorage";
 
 
 const BookDetails = () => {
@@ -9,6 +11,14 @@ const BookDetails = () => {
     const book = books.find(book => book.bookId === idInt)
     const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
     // console.log(book)
+
+    const handleAddReadBooks = () => {
+        saveBooks(idInt)
+    }
+
+    const handleAddWishBooks = () => {
+        wishSaveBooks(idInt)
+    }
     return (
         <div>
             <div className="card mt-20 mb-20 lg:card-side">
@@ -33,8 +43,8 @@ const BookDetails = () => {
                         <p><span className="text-base">Rating:</span><span className="ml-28 text-base font-bold text-[#131313]">{rating}</span></p>
                     </div>
                     <div className="card-actions mt-8">
-                    <NavLink className='font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6'><button className="text-lg">Read</button></NavLink>
-                        <button className="btn bg-[#59C6D2] text-white">Wishlist</button>
+                        <button onClick={handleAddReadBooks} className="text-lg font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6">Read</button>
+                        <button onClick={handleAddWishBooks} className="btn bg-[#59C6D2] text-white">Wishlist</button>
                     </div>
                 </div>
             </div>
