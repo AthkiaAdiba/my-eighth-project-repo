@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getStoredBooks } from "../Utility/localStorage";
-import ReadBook from "../ReadBook/ReadBook";
 import { wishGetStoredBooks } from "../Utility/wishLocalStorage";
+import WishBook from "../WishBook/WishBook";
 
 const WishBookLists = () => {
     const books = useLoaderData();
@@ -10,9 +9,9 @@ const WishBookLists = () => {
     console.log(wishBooks)
 
     useEffect(() => {
-        const storedBooksIds = wishGetStoredBooks;
+        const storedWishBooksIds = wishGetStoredBooks();
         if (books.length > 0) {
-            const wishBook = books.filter(book => storedBooksIds.includes(book.bookId))
+            const wishBook = books.filter(book => storedWishBooksIds.includes(book.bookId))
             // console.log(readBook)
             setWishBooks(wishBook)
         }
@@ -20,7 +19,11 @@ const WishBookLists = () => {
 
     return (
         <div>
-            <h2>From wish book lists</h2>
+            <div>
+                {
+                    wishBooks.map(book => <WishBook key={book.bookId} book={book}></WishBook>)
+                }
+            </div>
         </div>
     );
 };

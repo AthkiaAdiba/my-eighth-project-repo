@@ -29,17 +29,17 @@ const router = createBrowserRouter([
       {
         path: '/listedBooks',
         element: <ListedBooks></ListedBooks>,
-        loader: () => fetch('books.json'),
+        loader: () => fetch('/books.json'),
         children: [
           {
             index: true,
             element: <ReadBooks></ReadBooks>,
-            loader: () => fetch('books.json')
+            loader: () => fetch('/books.json')
           },
           {
             path: 'wishBookLists',
             element: <WishBookLists></WishBookLists>,
-            loader: () => fetch('books.json')
+            loader: () => fetch('/books.json')
           }
         ]
       },
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: '/bookDetails/:id',
         element: <BookDetails></BookDetails>,
-        loader: () => fetch('books.json')
+        loader: () => fetch('/books.json')
       }
     ]
   },

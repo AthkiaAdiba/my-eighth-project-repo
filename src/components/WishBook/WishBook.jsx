@@ -1,9 +1,8 @@
 import { CiLocationOn } from "react-icons/ci";
 import { GoPeople } from "react-icons/go";
 import { TfiBook } from "react-icons/tfi";
-import { Link } from "react-router-dom";
 
-const ReadBook = ({ book }) => {
+const WishBook = ({ book }) => {
     const { bookId, bookName, author, image, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
     return (
         <div>
@@ -12,9 +11,9 @@ const ReadBook = ({ book }) => {
                 <div className="space-y-5">
                     <h2 className="text-2xl font-bold text-[#131313]">{bookName}</h2>
                     <p className="font-medium text-base">By: {author}</p>
-                    <div className="flex flex-col lg:flex-row gap-4">
-                        <p><span className="mr-2 lg:mr-3 text-base font-bold text-[#131313]">Tag</span> {
-                            tags.map((tag, idx) => <span key={idx} className="text-[#23BE0A] text-base font-medium rounded-[30px] bg-[#23be0a0d] px-2 lg:px-2 py-1 lg:p-2 mr-1 lg:mr-3"># {tag}</span>)
+                    <div className="flex gap-4">
+                        <p><span className="mr-3 text-base font-bold text-[#131313]">Tag</span> {
+                            tags.map((tag, idx) => <span key={idx} className="text-[#23BE0A] text-base font-medium rounded-[30px] bg-[#23be0a0d] px-2 lg:px-2 py-1 lg:p-2 mr-3"># {tag}</span>)
                         }</p>
                         <p className="text-base flex items-center"><CiLocationOn className="text-2xl mr-2"></CiLocationOn> Year of Publishing: {yearOfPublishing}</p>
                     </div>
@@ -26,7 +25,7 @@ const ReadBook = ({ book }) => {
                     <div className=" flex flex-col lg:flex-row gap-5">
                         <p className="bg-[#328eff26] px-5 py-2 rounded-[30px] text-[#328EFF] text-base">Category: {category}</p>
                         <p className="px-5 py-2 text-base rounded-[30px] text-[#FFAC33] bg-[#ffac3326]">Rating: {rating}</p>
-                        <Link to={`/bookDetails/${bookId}`}><p className="px-5 py-2 rounded-[30px] text-lg font-medium text-[#FFFFFF] bg-[#23BE0A]">View Details</p></Link>
+                        <p className="px-5 py-2 rounded-[30px] text-lg font-medium text-[#FFFFFF] bg-[#23BE0A]">View Details</p>
                     </div>
                 </div>
             </div>
@@ -34,4 +33,4 @@ const ReadBook = ({ book }) => {
     );
 };
 
-export default ReadBook;
+export default WishBook;
