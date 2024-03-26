@@ -1,11 +1,12 @@
 import line from '../../assets/Line 1.png'
 import { FaRegStar } from "react-icons/fa";
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Book = ({ book }) => {
-    const { image, tags, bookName, author, category, rating } = book;
+    const { image, tags, bookName, author, category, rating, bookId } = book;
     return (
-        <div>
+        <Link to={`/bookDetails/${bookId}`}>
             <div className="card bg-base-100 border-2 p-2 lg:p-6">
                 <figure className="bg-base-200 h-[250px] rounded-xl">
                     <img src={image} className="rounded-xl h-[200px] bg-base-200" />
@@ -29,7 +30,7 @@ const Book = ({ book }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
