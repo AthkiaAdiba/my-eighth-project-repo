@@ -1,6 +1,7 @@
 import { CiLocationOn } from "react-icons/ci";
 import { GoPeople } from "react-icons/go";
 import { TfiBook } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 
 const WishBook = ({ book }) => {
     const { bookId, bookName, author, image, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
@@ -25,7 +26,7 @@ const WishBook = ({ book }) => {
                     <div className=" flex flex-col lg:flex-row gap-5">
                         <p className="bg-[#328eff26] px-5 py-2 rounded-[30px] text-[#328EFF] text-base">Category: {category}</p>
                         <p className="px-5 py-2 text-base rounded-[30px] text-[#FFAC33] bg-[#ffac3326]">Rating: {rating}</p>
-                        <p className="px-5 py-2 rounded-[30px] text-lg font-medium text-[#FFFFFF] bg-[#23BE0A]">View Details</p>
+                        <Link to={`/bookDetails/${bookId}`}><p className="px-5 py-2 rounded-[30px] text-lg font-medium text-[#FFFFFF] bg-[#23BE0A]">View Details</p></Link>
                     </div>
                 </div>
             </div>
