@@ -29,9 +29,11 @@ const ListedBooks = () => {
             <div className="text-center mt-8">
                 <details className="dropdown">
                     <summary className="m-1 btn bg-[#23BE0A] text-white">Sort By <IoIosArrowDown></IoIosArrowDown></summary>
-                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
+                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-white rounded-box w-52">
+                        <li className="hover:bg-[#23BE0A] hover:text-white rounded-lg"><a>All</a></li>
+                        <li className="hover:bg-[#23BE0A] hover:text-white rounded-lg"><a>Rating</a></li>
+                        <li className="hover:bg-[#23BE0A] hover:text-white rounded-lg"><a>Number of Pages</a></li>
+                        <li className="hover:bg-[#23BE0A] hover:text-white rounded-lg"><a>Published Year</a></li>
                     </ul>
                 </details>
             </div>
