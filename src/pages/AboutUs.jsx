@@ -10,7 +10,7 @@ const AboutUs = () => {
             <h1 className="text-4xl text-slate-900 font-bold mb-5">About BookVibe</h1>
             <div>
                 {
-                    description.map(des => <p key={des.id} className="text-lg font-semibold mb-6">
+                    description.map(des => <p key={des.id} className="text-xl font-normal mb-6">
                         {des.description}</p>)
                 }
             </div>

@@ -37,7 +37,7 @@ const ReadPages = () => {
 
     return (
         <div className='bg-base-200 rounded-xl px-0 lg:px-20 py-2 lg:py-24 mt-10 mb-16'>
-            <ResponsiveContainer aspect={3}>
+            <ResponsiveContainer aspect={2.5}>
                 <BarChart
                     
                     // height={300}

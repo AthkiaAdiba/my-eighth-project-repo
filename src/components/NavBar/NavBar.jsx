@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const NavBar = () => {
     return (
         <div className="mt-10">
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100 flex flex-col lg:flex-row">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -15,6 +15,7 @@ const NavBar = () => {
                             <NavLink to='/listedBooks' className={({ isActive }) => isActive ? 'font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6' : 'mr-6'}><button className="text-lg">Listed Books</button></NavLink>
                             <NavLink to='/readPages' className={({ isActive }) => isActive ? 'font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6' : 'mr-6'}><button className="text-lg">Pages to Read</button></NavLink>
                             <NavLink to='/aboutUs' className={({ isActive }) => isActive ? 'font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6' : 'mr-6'}><button className="text-lg">AboutUs</button></NavLink>
+                            <NavLink to='/authors' className={({ isActive }) => isActive ? 'font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6' : 'mr-6'}><button className="text-lg">Authors</button></NavLink>
                         </ul>
                     </div>
                     <a className="btn btn-ghost font-bold text-3xl text-[#131313]">Book Vibe</a>
@@ -25,6 +26,7 @@ const NavBar = () => {
                         <NavLink to='/listedBooks' className={({ isActive }) => isActive ? 'font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6' : 'mr-6'}><button className="text-lg">Listed Books</button></NavLink>
                         <NavLink to='/readPages' className={({ isActive }) => isActive ? 'font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6' : 'mr-6'}><button className="text-lg">Pages to Read</button></NavLink>
                         <NavLink to='/aboutUs' className={({ isActive }) => isActive ? 'font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6' : 'mr-6'}><button className="text-lg">AboutUs</button></NavLink>
+                        <NavLink to='/authors' className={({ isActive }) => isActive ? 'font-semibold btn btn-outline hover:bg-[#23BE0A] border-[#23BE0A] text-[#23BE0A] mr-6' : 'mr-6'}><button className="text-lg">Authors</button></NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end">
