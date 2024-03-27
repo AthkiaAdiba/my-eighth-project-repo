@@ -5,19 +5,20 @@ import { IoIosArrowDown } from "react-icons/io";
 
 
 const ListedBooks = () => {
-    // const books = useLoaderData();
-    // const [readBooks, setReadBooks] = useState([]);
     const [tabIndex, setTabIndex] = useState(0)
-    // console.log(readBooks)
+    const books = useLoaderData();
+    const [readBooks, setReadBooks] = useState([]);
+    
+    console.log(readBooks)
 
-    // useEffect(() => {
-    //     const storedBooksIds = getStoredBooks();
-    //     if (books.length > 0) {
-    //         const readBook = books.filter(book => storedBooksIds.includes(book.bookId))
-    //         // console.log(readBook)
-    //         setReadBooks(readBook)
-    //     }
-    // }, [books])
+    useEffect(() => {
+        const storedBooksIds = getStoredBooks();
+        if (books.length > 0) {
+            const readBook = books.filter(book => storedBooksIds.includes(book.bookId))
+            // console.log(readBook)
+            setReadBooks(readBook)
+        }
+    }, [books])
 
     return (
         <div>
