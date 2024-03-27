@@ -13,12 +13,12 @@ const saveBooks = id => {
     const storedBooks = getStoredBooks();
     const exist = storedBooks.find(bookId => bookId === id);
     if (exist) {
-        return toast.error('already exist')
+        return toast.error('You have Already read this book!')
     }
     else {
         storedBooks.push(id);
         localStorage.setItem('book', JSON.stringify(storedBooks));
-        toast.success('Successfully added')
+        toast.success('Books Added to Read List')
     }
 
 }

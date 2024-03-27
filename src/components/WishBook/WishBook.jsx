@@ -6,7 +6,7 @@ const WishBook = ({ book }) => {
     const { bookId, bookName, author, image, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
     return (
         <div>
-            <div className="flex flex-col lg:flex-row gap-8 mb-8 mt-6 border-2 p-6 rounded-xl">
+            <div className="flex flex-col lg:flex-row ml-0 lg:ml-20 gap-8 mb-8 mt-6 border-2 p-6 rounded-xl">
                 <img className="h-[260px] bg-base-200 p-5 rounded-xl" src={image} alt="" />
                 <div className="space-y-5">
                     <h2 className="text-2xl font-bold text-[#131313]">{bookName}</h2>
