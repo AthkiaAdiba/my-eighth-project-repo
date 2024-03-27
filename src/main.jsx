@@ -13,6 +13,7 @@ import BookDetails from './components/BookDetails/BookDetails.jsx';
 import { ToastContainer } from 'react-toastify';
 import ReadBooks from './components/ReadBooks/ReadBooks.jsx';
 import WishBookLists from './components/WishBookLists/WishBookLists.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 
   
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
