@@ -2,6 +2,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { GoPeople } from "react-icons/go";
 import { TfiBook } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const WishBook = ({ book }) => {
     const { bookId, bookName, author, image, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
@@ -33,5 +34,9 @@ const WishBook = ({ book }) => {
         </div>
     );
 };
+
+WishBook.propTypes = {
+    book: PropTypes.object
+}
 
 export default WishBook;

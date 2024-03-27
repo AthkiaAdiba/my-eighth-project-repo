@@ -1,13 +1,10 @@
-
+import PropTypes from 'prop-types';
 
 const Author = ({ author }) => {
-    //bg-gray-900
-    //max-w-xs
-    //shadow-md
-    //text-gray-100
+    
     return (
         <div>
-            <div className="flex border-2 flex-col justify-center p-6 rounded-xl sm:px-12 text-black">
+            <div className="flex border-2 flex-col justify-center p-6 rounded-xl sm:px-12 text-black h-[450px]">
                 <img src={author.author_image} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 aspect-square" />
                 <div className="space-y-4 text-center divide-y divide-gray-700">
                     <div className="my-2 space-y-1">
@@ -43,5 +40,9 @@ const Author = ({ author }) => {
         </div>
     );
 };
+
+Author.propTypes = {
+    author: PropTypes.object
+}
 
 export default Author;
