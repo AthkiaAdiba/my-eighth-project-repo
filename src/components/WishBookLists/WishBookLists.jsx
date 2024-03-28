@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { wishGetStoredBooks } from "../Utility/wishLocalStorage";
 import WishBook from "../WishBook/WishBook";
 
+
 const WishBookLists = () => {
     const books = useLoaderData();
     const [wishBooks, setWishBooks] = useState([]);
@@ -12,7 +13,7 @@ const WishBookLists = () => {
         const storedWishBooksIds = wishGetStoredBooks();
         if (books.length > 0) {
             const wishBook = books.filter(book => storedWishBooksIds.includes(book.bookId))
-            // console.log(readBook)
+            
             setWishBooks(wishBook)
         }
     }, [books])
