@@ -1,7 +1,8 @@
 # Website  Name : Book Vibe #
-# Website Live URL : [Live](athkia-adiba.surge.sh) (athkia-adiba.surge.sh)
-#### 1. I have added react Routing System with NavLink's Active class. ####
-#### 2. Specific book details can be accessed through the card using routing. ####
-#### 3. I have added ReadBooks list and WishBook list. ####
-#### 4. I have added a CustomShapeBarChart. ####
-#### 5. I have used many react package.
+# Website Live URL : [athkia-adiba.surge.sh]
+### Has been described bellow what can do users on this website ###
+#### 1. Users can identify which page they are on by NavLink's Active class.####
+#### 2. They can move from one page to another page by using react routing system.####
+#### 3. When they clicked on one book card, they can see book details of clicked book card.####
+#### 4. They can make a Read Book list and a Wish Book list.####
+#### 5. They can also see their Read Book list's graph on a CustomShapeBarChart.
