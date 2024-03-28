@@ -1,5 +1,5 @@
 # Website  Name : Book Vibe #
-# Website Live URL : [Live](https://athkia-adiba.surge.sh/)(athkia-adiba.surge.sh)
+# Website Live URL : [https://athkia-adiba.surge.sh/]
 ## Has been described below what can do users on this website: ##
 #### 1. Users can identify which page they are on by NavLink's Active class.
 #### 2. They can move from one page to another page by using react routing system.
