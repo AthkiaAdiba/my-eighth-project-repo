@@ -1,28 +1,16 @@
-import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
-import { wishGetStoredBooks } from "../Utility/wishLocalStorage";
+import { useContext } from "react";
 import WishBook from "../WishBook/WishBook";
+import { WishSortingContext } from "../../pages/ListedBooks";
 
 
 const WishBookLists = () => {
-    const books = useLoaderData();
-    const [wishBooks, setWishBooks] = useState([]);
-    console.log(wishBooks)
-
-    useEffect(() => {
-        const storedWishBooksIds = wishGetStoredBooks();
-        if (books.length > 0) {
-            const wishBook = books.filter(book => storedWishBooksIds.includes(book.bookId))
-            
-            setWishBooks(wishBook)
-        }
-    }, [books])
+    const [wishSortingData] = useContext(WishSortingContext)
 
     return (
         <div>
             <div>
                 {
-                    wishBooks.map(book => <WishBook key={book.bookId} book={book}></WishBook>)
+                    wishSortingData.map(book => <WishBook key={book.bookId} book={book}></WishBook>)
                 }
             </div>
         </div>

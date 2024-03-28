@@ -2,48 +2,74 @@ import { createContext, useEffect, useState } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
 import { getStoredBooks } from "../components/Utility/localStorage";
 import { IoIosArrowDown } from "react-icons/io";
+import { wishGetStoredBooks } from "../components/Utility/wishLocalStorage";
 
 
-export const SortingDataContext = createContext([])
+export const SortingDataContext = createContext([]);
+export const WishSortingContext = createContext([])
 
 const ListedBooks = () => {
     const [tabIndex, setTabIndex] = useState(0)
     const books = useLoaderData();
     const [readBooks, setReadBooks] = useState([]);
     const [sortingData, setSortingData] = useState([]);
-    console.log(sortingData)
+    const [wishBooks, setWishBooks] = useState([]);
+    const [sortingWishBooks, setSortingWishBooks] = useState([]);
+    
 
     const handleSorting = sortText => {
         if (sortText === 'all') {
             setSortingData([...readBooks])
+            setSortingWishBooks([...wishBooks])
         }
         else if (sortText === 'rating') {
             const readBooksOfRating = readBooks.sort((a, b) => {
                 return b.rating - a.rating;
+            });
+            const wishBooksOfRating = wishBooks.sort((a, b) => {
+                return b.rating - a.rating;
             })
             setSortingData([...readBooksOfRating]);
+            setSortingWishBooks([...wishBooksOfRating]);
         }
         else if (sortText === 'pages') {
             const readBooksOfPages = readBooks.sort((a, b) => {
                 return b.totalPages - a.totalPages;
+            });
+            const wishBooksOfPages = wishBooks.sort((a, b) => {
+                return b.totalPages - a.totalPages;
             })
-            setSortingData([...readBooksOfPages])
+            setSortingData([...readBooksOfPages]);
+            setSortingWishBooks([...wishBooksOfPages]);
         }
         else if (sortText === 'year') {
             const readBooksOfYear = readBooks.sort((a, b) => {
                 return b.yearOfPublishing - a.yearOfPublishing;
+            });
+            const wishBooksOfYear = wishBooks.sort((a, b) => {
+                return b.yearOfPublishing - a.yearOfPublishing;
             })
             setSortingData([...readBooksOfYear]);
+            setSortingWishBooks([...wishBooksOfYear]);
         }
     }
-
+    // For Read Book List
     useEffect(() => {
         const storedBooksIds = getStoredBooks();
         if (books.length > 0) {
             const readBook = books.filter(book => storedBooksIds.includes(book.bookId))
-            // console.log(readBook)
             setReadBooks(readBook);
             setSortingData(readBook);
+        }
+    }, [books])
+
+    // For Wish Book List
+    useEffect(() => {
+        const wishStoredBooksIds = wishGetStoredBooks();
+        if (books.length > 0) {
+            const wishBook = books.filter(book => wishStoredBooksIds.includes(book.bookId));
+            setWishBooks(wishBook);
+            setSortingWishBooks(wishBook)
         }
     }, [books])
 
@@ -76,9 +102,11 @@ const ListedBooks = () => {
                         <span className="text-lg text-[#131313cc]">Wishlist Books</span>
                     </Link>
                 </div>
-                <SortingDataContext.Provider value={[sortingData]}>
-                    <Outlet></Outlet>
-                </SortingDataContext.Provider>
+                <WishSortingContext.Provider value={[sortingWishBooks]}>
+                    <SortingDataContext.Provider value={[sortingData]}>
+                        <Outlet></Outlet>
+                    </SortingDataContext.Provider>
+                </WishSortingContext.Provider>
             </div>
         </div>
     );

@@ -19,7 +19,7 @@ const wishSaveBooks = id => {
         return toast.error('You have Already read this book!')
     }
     else if(storedBooks2){
-        toast.error('You have Already Added to Wish List')
+        toast.error('You Added this book to Wish List')
     }
     else {
         storedBooks.push(id);
